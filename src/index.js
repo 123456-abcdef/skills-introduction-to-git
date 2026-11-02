@@ -310,6 +310,16 @@ function clearPattern(startRow, startCol) {
     }
   }
 }
+function updateScore() {
+  document.getElementById("score").textContent = score;
+
+  // Update high score if current score exceeds it
+  if (score > highScore) {
+    highScore = score;
+    document.getElementById("high-score").textContent = highScore;
+    localStorage.setItem("stackOverflownHighScore", highScore);
+  }
+}
 
 // Update score display
 function updateScore() {
